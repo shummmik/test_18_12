@@ -20,11 +20,9 @@ def countM(n,m):
     if start < m:
         start = m
     ost = start%m
-
     while ost != 0:
         start += 1
         ost = start%m
-    
     while start <= end:
         listN.append(start)
         start += m
@@ -37,15 +35,12 @@ def countM1(n,m):
     if start < m:
         start = m
     ost = start%m
-
     while ost != 0:
         start += 1
         ost = start%m
-    
     while start <= end:
         countN += 1
         start += m
-    
     return countN
 
 def countM2(n,m):
