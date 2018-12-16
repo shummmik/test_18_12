@@ -27,8 +27,6 @@ def minNode(node1, node2):
 
 def minD(l):
     li = list(i[0] for i in l.values() if i[1] == False)
-
-    
     m = minV( li )
     for i in l.keys():
         if l[i][0] == m:
@@ -43,19 +41,14 @@ def reGraf(grafNodes,rib,i,start):
 
 def deis(nodes, ribs, start, end):
     grafNodes = {i: [float('inf'), False,[]] for i in nodes}
-    #way = 
     grafNodes[start][0] = 0   #way
-    
     while start != end: 
         grafNodes[start][1] = True
-        
         for rib in ribs:
             if rib[0] == start :
                 reGraf(grafNodes,rib,1,start)
-
             if rib[1] == start:
                 reGraf(grafNodes,rib,0,start)
-
         start = minD(grafNodes)
     way = grafNodes[end][2].copy()
     way.append(end)
