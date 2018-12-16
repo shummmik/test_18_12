@@ -3,11 +3,7 @@ n = [[1,2],[3,4]]
 
 def getMatrix(m,n,j):
     r = 1 # row
-     # column
     l = 1
-
-    c1 = 0
-
     mOut = []
     while l < n:
         mOut.append(list())
@@ -21,9 +17,7 @@ def getMatrix(m,n,j):
                 continue
             mOut[r-1].append(m[r][c]) 
             c += 1
-            c1 += 1
         r += 1
-    #print(mOut)
     return mOut
 
 
@@ -38,8 +32,6 @@ def determinantM(m):
     while j < n:
         res += (-1)**(j+2)*m[0][j]*determinantM(getMatrix(m,n,j))
         j += 1
-    #print(res)
     return res
 
-print(determinantM(n))
-print(getMatrix(n,2,0))
+print(determinantM(m))
